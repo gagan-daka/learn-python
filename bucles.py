@@ -123,6 +123,7 @@ def dioses_olimpo(arg1, arg2):
     pass
 '''
 
+'''
 #ELSE
 frase = "Todos los caracteres de una frase"
 count = 0
@@ -131,4 +132,36 @@ for caracter in frase:
     #if (caracter == "l"):
         #break
 else:
-    print(f"La frase tiene {count} caracteres")    
+    print(f"La frase tiene {count} caracteres")
+'''
+
+'''
+EJERCICIO: EL USUARIO DEBE ADIVINAR UN NÚMERO ENTRE 0 Y 10.
+EL PROGRAMA DEBERÁ PEDIR QUE EL USUARIO INTRODUZCA UN NÚMERO
+Y DEBE DECIR SI HA ACERTADO, SI EL NÚMERO ES MENOR O MAYOR QUE
+EL QUE HA INTRODUCIDO.
+'''
+
+numero_adivinar = 7
+
+def pedirYcomprobar(num):
+    numUser = int(input("Adivina el número: "))
+    if(numUser == numero_adivinar):
+        print("Eres un Crack!")
+        return True
+    elif (numUser > numero_adivinar):
+        print("Te has pasado!!!")
+        return False
+    elif (numUser < numero_adivinar):
+        print("El numero es mayor")
+        return False
+'''
+while(True):
+    if (pedirYcomprobar(numero_adivinar)):
+        break
+'''
+
+while(not(pedirYcomprobar(numero_adivinar))):
+    pass
+else:
+    print("Fin del juego")
