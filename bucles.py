@@ -31,7 +31,8 @@ for variable in range(6, 10):
 #INICIO-FIN-SALTO
 for variable in range(5, 21, 2):
     print(variable)
-'''    
+'''
+'''
 #EJEMPLO 1
 palabra = "One Piece"
 for letra in palabra:
@@ -41,3 +42,40 @@ for letra in palabra:
         pass
     else:
         print(str(letra.upper())+"-es una consonante")        
+'''
+
+#ITERAR SOBRE UNA LISTA
+'''
+numeros = [60, 7, 90, 85]
+for numero in numeros:
+    print(numero)
+    numero +=10
+    print(numero)
+
+print(numeros)    
+
+for indice in range(len(numeros)):
+    numeros[indice]+=10
+
+print(numeros)
+'''
+
+#WHILE
+'''
+contador = 0
+while (contador <= 5):
+    print(contador)
+    contador += 1
+'''
+#EJEMPLO
+letra_encontrada = False
+letra = "a"
+frase = "Estoy buscando la letra a"
+indice = 0
+
+while(not(letra_encontrada)):
+    if (frase[indice] == letra):
+        letra_encontrada = True
+        print(f"Ya hemos encontrado la letra '{letra}', se encuentra en el indice {indice}") #format string
+    else:
+        indice +=1
