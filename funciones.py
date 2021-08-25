@@ -90,42 +90,18 @@ LAS OPERACIONES PUEDEN SER SUMA, RESTA, POTENCIA. SI INTRODUCE UNA OPERACIÓN DI
 A ESTAS, MOSTRAR UN MENSAJE DE ERROR. SI LA OPERACIÓN ES CORRECTA, MOSTRAR EL RESULTADO.
 '''
 #SOLUCIÓN
-
-
-
-def sumar(n1, n2):
-    print("Resultado de la suma: "+ str(n1+n2))
-
-def restar(n1, n2):
-    print("Resultado de la resta: "+ str(n1-n2))
-
-def dividir(n1, n2):
-    if(n2 == 0):
-        print("No puedo dividir entre 0")
+def calculadora():
+    operacion = input("¿Qué operación quieres hacer?Las operaciones posibles son:\n-suma\n-resta\n-potencia\n")
+    num1 = float(input("Introduce el primer valor: "))
+    num2 = float(input("Introduce el segundo valor: "))
+    if(operacion == "suma"):
+        print("El resultado es: ", num1 + num2) 
+    elif(operacion == "resta"):
+        print("El resultado es: ", num1 - num2) 
+    elif(operacion == "potencia"):
+        print("El resultado es: ", num1**num2) 
     else:
-        print("Resultado de la division: "+ str(n1/n2))
+        print("Operación errónea. Las operaciones posibles son:\n-suma\n-resta\n-potencia\n")
 
-def multiplicacion(n1, n2):
-    print("Resultado de la multiplicacion: "+ str(n1*n2))
-
-
-print("""Calduladora
--------------
-1.Sumar
-2.Restar
-3.Dividir
-4.Multiplicar""")
-
-numero1 = int(input("Introduce el primer numero: "))
-numero2 = int(input("Introduce el segundo numero: "))
-opcion = int(input("Que calculo quiere hacer? "))
-
-
-if (opcion == 1):
-    sumar(numero1, numero2)
-elif (opcion == 2):
-    restar(numero1, numero2)
-elif (opcion == 3):
-    dividir(numero1, numero2)
-else:
-    multiplicacion(numero1, numero2)    
+print("Apartado 6: Ejercicio 2. Mini calculadora")
+calculadora()
