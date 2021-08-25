@@ -67,6 +67,7 @@ while (contador <= 5):
     print(contador)
     contador += 1
 '''
+'''
 #EJEMPLO
 letra_encontrada = False
 letra = "a"
@@ -79,3 +80,55 @@ while(not(letra_encontrada)):
         print(f"Ya hemos encontrado la letra '{letra}', se encuentra en el indice {indice}") #format string
     else:
         indice +=1
+'''
+'''
+#BREAK > SALE DEL BUCLE
+frase = "Estoy buscando la letra a"
+letra = "e"
+
+for caracter in frase:
+    if (caracter == letra):
+        print(F"Letra '{letra}' encontrada en la posicion {frase.index(letra)}") #index() FIRST SUBSTRING
+        break #TODO LO QUE ESTE ABAJO DE 'BREAK' NO SE VA A EJECUTAR
+    else:   
+        print("Letra no encontrada")
+    print(caracter)
+'''
+'''
+#CONTINUE -> NO SALE DEL BUCLE
+frase = "Hola, como estas"
+letra = "a"
+count = 0
+
+for caracter in frase:
+    if (caracter == letra):
+        count +=1
+        print(f"La letra '{letra}' la hemos encontrado {count} veces")
+        continue
+    print("Hey")
+'''
+
+'''
+#PASS -> PASA, LO IGNORA
+lista = [10, 20, 30, 40, 0]
+for num in lista:
+    if(num == 10):
+        pass
+    print(f"El valor de la variable es {num}")
+
+
+def hijos_zeus(arg1, arg2):
+    pass
+def dioses_olimpo(arg1, arg2):
+    pass
+'''
+
+#ELSE
+frase = "Todos los caracteres de una frase"
+count = 0
+for caracter in frase:
+    count +=1
+    #if (caracter == "l"):
+        #break
+else:
+    print(f"La frase tiene {count} caracteres")    
