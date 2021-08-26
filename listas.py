@@ -105,11 +105,13 @@ print(frutas)
 indice = frutas.index("Plátano")
 print(indice)
 '''
+
+'''
 #CONVERTIR UN TEXTO EN LISTA
 texto = "Hola que tal"
 lista_palabras = (texto.split())
 print(lista_palabras)
-
+'''
 '''
 ENUNCIADO: TENEMOS UN TEXTO DÓNDE QUEREMOS ENCONTRAR PALABRAS CLAVE. 
 LAS PALABRAS CLAVE PUEDEN SER HASTA 5 Y DEBEREMOS PEDÍRSELAS AL USUARIO 
@@ -136,8 +138,36 @@ keywords = []
 keywords_repeat = []
 
 for x in range(5):
-    keyword = int("Introduce una palabra clave o 'fin' para terminar: ")
+    keyword = input("Introduce una palabra clave o 'fin' para terminar: ")
     if keyword == 'fin':
         break
     else:
         keywords.append(keyword)
+
+print(keywords)
+
+posicion = 0
+while(True):
+    if posicion >= len(keywords):
+        break
+    if keywords[posicion] == '':
+        keywords.pop(posicion)
+    elif keywords[posicion].isnumeric():
+        keywords.pop(posicion)
+    else:
+        posicion +=1    
+print("Lista de keywords corregida")   
+print(keywords)
+
+texto = texto.replace('.', '').replace(',', '').split()
+
+for x in range(len(keywords)):
+    keywords_repeat.append(0)
+
+for palabra in texto:
+    for keyword in keywords:
+        if keyword == palabra:
+            pos = keywords.index(keyword)
+            keywords_repeat[pos] += 1
+            break
+print(keywords_repeat)
