@@ -150,7 +150,7 @@ posicion = 0
 while(True):
     if posicion >= len(keywords):
         break
-    if keywords[posicion] == '':
+    if keywords[posicion] == '': #EMPTY
         keywords.pop(posicion)
     elif keywords[posicion].isnumeric():
         keywords.pop(posicion)
@@ -161,7 +161,8 @@ print(keywords)
 
 texto = texto.replace('.', '').replace(',', '').split()
 
-for x in range(len(keywords)):
+longitud_keywords = len(keywords)
+for x in range(longitud_keywords):
     keywords_repeat.append(0)
 
 for palabra in texto:
@@ -170,4 +171,4 @@ for palabra in texto:
             pos = keywords.index(keyword)
             keywords_repeat[pos] += 1
             break
-print(keywords_repeat)
+print(keywords_repeat)  
