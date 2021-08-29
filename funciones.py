@@ -154,10 +154,10 @@ def formatoDescarga(tipo, *args):
 formatoDescarga("video", 720)
 formatoDescarga("video", 1080, 60)
 formatoDescarga("audio")
-formatoDescarga("a")
+formatoDescarga("b")
 '''
 --- KEYWORD ARGUMENTS --- 
 PODEMOS PASAR LOS ARGUMENTOS DE UNA FUNCIÓN
 MEDIANTE KEYWORDS. DE ESTA FORMA CONSEGUIMOS QUE EL ORDEN DE
-LOS ARGUMENTOS SEA INDIFERENTE
+LOS ARGUMENTOS SEA INDIFERENTe
 '''
