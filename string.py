@@ -153,6 +153,8 @@ LA CONVERSIÓN ES: 1€ = 1.21$. NO HACE FALTA MODIFICAR LA VARIABLE ORIGINAL DE
 PODEMOS RETORNAR UNA COPIA CON EL PRECIO CONVERTIDO
 '''
 
+'''
+#SOLUCION
 des1 = "Este bolso de cuero de la marca: Miguel Cors tiene un precio de 199.99€. Es una oferta especial."
 des2 = "Las botas de la marca: Nique valen 89€. Nunca han estado tan rebajadas."
 des3 = "¡Tenemos el bambú en oferta! Cómpralo ahora por 1.2€ el kg ¡No la dejes pasar!"
@@ -168,7 +170,7 @@ def findPrice(txt):
             indice = txtList.index(palabra)
             break
     precio = txtList[indice]
-    precio = precio.split('€')[0]
+    precio = precio.split('€')[0] #['199.99', '.']
     txtList[indice] = str(float(precio)*conversion) + '$'
     nuevaDescripcion = " ".join(txtList)
     return precio, nuevaDescripcion
@@ -185,3 +187,67 @@ print(descripcion)
 precio, descripcion = findPrice(des3)
 print(precio)
 print(descripcion)
+'''
+
+'''
+#OTROS MÉTODOS 
+texto = "esto es un texto de Ejemplo"
+print("Método startwith: ") #Retorna True o False
+print(texto.startswith('esto'))
+print("Método upper: ")
+print(texto.upper())
+print("Método Title: ") #la primera letra la convierte en mayuscula
+print(texto.title())
+print("Método capitalize: ") 
+print(texto.capitalize())
+print("Método rjust: ")  #justificar a la derecha
+print(texto.rjust(len(texto) + 8))
+'''
+
+'''
+EJERCICIO: Formatear texto. Debemos formatear el siguiente texto siguiendo 
+una serie de normas: 
+    - '#' a principio de línea significa que es un título y deberemos convertirlo 
+        todo a mayúsculas.
+    - '##' a principio de línea significa que es un subtítulo y deberemos poner la
+         primera letra de cada palabra en mayúsculas.
+    - '###' deberemos poner únicamente la primera letra en mayúsculas.
+    - si la línea empieza con '-' deberemos añadir una sangría.
+
+NOTA: El método splitlines() retorna una lista de strings. Separa mediante saltos de línea.
+SOLUCIÓN:
+'''
+
+texto = """
+#este es el título principal
+
+- Esto es una lista
+- De cosas que podemos hacer
+
+##este es un subtítulo
+
+Esto es una pequeña introducción
+- Esto es otro lista
+- De más cosas que podemos hacer
+
+###este es un sub-subtítulo 
+que tal
+"""
+
+def formatText(texto):
+    listaTexto = texto.splitlines()
+    for indx in range(len(listaTexto)):
+        if (listaTexto[indx].startswith('###')):
+            listaTexto[indx] = listaTexto[indx].replace('###', '')
+            listaTexto[indx] = listaTexto[indx].capitalize()
+        elif (listaTexto[indx].startswith('##')):
+            listaTexto[indx] = listaTexto[indx].replace('##', '')
+            listaTexto[indx] = listaTexto[indx].title()
+        elif (listaTexto[indx].startswith('#')):
+            listaTexto[indx] = listaTexto[indx].replace('#', '')
+            listaTexto[indx] = listaTexto[indx].upper()
+        elif (listaTexto[indx].startswith('-')):
+            listaTexto[indx] = listaTexto[indx].rjust(len(listaTexto[indx]) + 8)
+    return "\n".join(listaTexto)
+
+print(formatText(texto))    
