@@ -137,6 +137,7 @@ def  maximo2(listaNumeros):
 print(maximo2([1000,100.1, 500.2]))
 print(maximo2([1,2,3]))
 '''
+'''
 def formatoDescarga(tipo, *args):
     numArgs = len(args)
     if tipo == "video":
@@ -156,8 +157,48 @@ formatoDescarga("video", 1080, 60)
 formatoDescarga("audio")
 formatoDescarga("b")
 '''
+'''
 --- KEYWORD ARGUMENTS --- 
 PODEMOS PASAR LOS ARGUMENTOS DE UNA FUNCIÓN
 MEDIANTE KEYWORDS. DE ESTA FORMA CONSEGUIMOS QUE EL ORDEN DE
-LOS ARGUMENTOS SEA INDIFERENTe
+LOS ARGUMENTOS SEA INDIFERENTE
 '''
+'''
+def crearPersonaje(clase, raza, nombre):
+    print(f"{nombre.upper()} es un {clase} de raza {raza}")
+
+crearPersonaje(nombre="Goku", clase="super sayan", raza="humano")
+crearPersonaje("mago", "elfo", "Steve")
+'''
+'''
+--- KEYWORD ARBITRARY ARGUMENTS --- 
+SE UTILIZAN CUANDO NO SABEMOS CUÁNTOS ARGUMENTOS DE PALABRA 
+CLAVE VAMOS A RECIBIR
+'''
+'''
+#ALGO SIMILAR A DICCIONARIO COMO PARAMETRO
+def printKwargs(**kwargs):
+    print("\n")
+    print("Los atributos del personaje son: ")
+    for clave, valor in kwargs.items():
+        print(f"{clave}: {valor}")
+
+printKwargs(nombre="Goku", clase="super sayan", raza="humano", mascota="Dragon", clan="coorporation")  
+printKwargs(clase="mago", tipo="elfo")  
+'''
+'''
+COMBINACION DE ARGUMENTOS OBLIGATORIOS CON LOS ARGUMENTOS ARBITRARIOS
+Y CON LOS ARGUMENTOS ARBITRARIOS DE PALABRA CLAVE
+'''
+def crearPersonaje(nombre, *args, **kwargs):
+    descripcion = f"### {nombre.upper()} ###\n\n"
+    descripcion += "### DESCRIPCIÓN ### \n\n"
+    for clave, valor in kwargs.items():
+        descripcion += f"-{clave} : {valor}\n"
+    descripcion += "### HABILIDADES ###\n\n"
+    for skill in args:
+        descripcion += f" - {skill}\n"
+    return descripcion
+
+personaje = crearPersonaje("A", "ataque fuerte", "tormenta", "salto triple", clase="mago", raza="elfo", mascota="pajaro celestial")
+print(personaje)
