@@ -46,5 +46,3 @@ print(camiseta.precio)
 print(camiseta.infoProducto())
 print("####################")
 print(camisetaAdidas.infoProducto())
-
-https://www.youtube.com/watch?v=uMfxoErGUS8&list=PLVs9JdE6ZZh112EBnYa_wCxYpbVXEXrLF&index=14
